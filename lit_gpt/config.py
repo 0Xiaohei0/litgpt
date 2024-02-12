@@ -781,6 +781,44 @@ for c in llama_2:
         configs.append(copy)
 
 
+#################
+# Allen AI OLMo
+#################
+olmo = [
+    # https://huggingface.co/allenai/OLMo-1B/blob/main/config.json
+    dict(
+        name="OLMo-1b-hf",
+        hf_config=dict(org="allenai", name="OLMo-1b-hf"),
+        vocab_size=50280,
+        padding_multiple=64,  ## TODO: Not sure how to determine this
+        n_layer=16,
+        n_head=16,
+        rotary_percentage=1.0,
+        parallel_residual=False,
+        bias=False,
+        _norm_class="RMSNorm", ## TODO: Needs to be updated
+        _mlp_class="LLaMAMLP",
+        intermediate_size=11008,  ## TODO: Needs to be updated
+    ),
+    # https://huggingface.co/allenai/OLMo-7B/blob/main/config.json
+    dict(
+        name="OLMo-7b-hf",
+        hf_config=dict(org="allenai", name="OLMo-7b-hf"),
+        vocab_size=50280,
+        padding_multiple=64,  ## TODO: Not sure how to determine this
+        n_layer=32,
+        n_head=32,
+        rotary_percentage=1.0,
+        parallel_residual=False,
+        bias=False,
+        _norm_class="RMSNorm", ## TODO: Needs to be updated
+        _mlp_class="LLaMAMLP",
+        intermediate_size=11008,
+    ),
+]
+
+configs.extend(olmo)
+
 ##########################
 # Stability AI FreeWilly2
 ##########################
