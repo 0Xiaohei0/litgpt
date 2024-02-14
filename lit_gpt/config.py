@@ -799,7 +799,7 @@ olmo = [
         parallel_residual=False,
         bias=False,
         _norm_class="LayerNorm",
-        _mlp_class="LLaMAMLP",
+        _mlp_class="OLMoMLP",
         intermediate_size=8192,
     ),
     # https://huggingface.co/allenai/OLMo-7B/blob/main/config.json
@@ -815,8 +815,8 @@ olmo = [
         parallel_residual=False,
         bias=False,
         _norm_class="LayerNorm",
-        _mlp_class="LLaMAMLP",
-        intermediate_size=8192,
+        _mlp_class="OLMoMLP",
+        intermediate_size=11008,
     )
 ]
 
