@@ -70,7 +70,7 @@ You will require **1.1 TB** of disk space for Starcoder and **2.5** TB of space 
 python scripts/prepare_starcoder.py \
   --input_dir data/starcoderdata-raw \
   --output_dir data/starcoder \
-  --tokenizer_path checkpoints/Llama-2-7b-hf
+  --tokenizer_path checkpoints/meta-llama/Llama-2-7b-hf
 ```
 
 **SlimPajama:**
@@ -79,17 +79,17 @@ python scripts/prepare_starcoder.py \
 python scripts/prepare_slimpajama.py \
   --input_dir data/slimpajama-raw/validation \
   --output_dir data/slimpajama/val \
-  --tokenizer_path checkpoints/Llama-2-7b-hf
+  --tokenizer_path checkpoints/meta-llama/Llama-2-7b-hf
 
 python scripts/prepare_slimpajama.py \
   --input_dir data/slimpajama-raw/test \
   --output_dir data/slimpajama/test \
-  --tokenizer_path checkpoints/Llama-2-7b-hf
+  --tokenizer_path checkpoints/meta-llama/Llama-2-7b-hf
 
 python scripts/prepare_slimpajama.py \
   --input_dir data/slimpajama-raw/train \
   --output_dir data/slimpajama/train \
-  --tokenizer_path checkpoints/Llama-2-7b-hf
+  --tokenizer_path checkpoints/meta-llama/Llama-2-7b-hf
 ```
 
 If you want to run on a small slice of the datasets first, pass the flag `--fast_dev_run=true` to the commands above.
@@ -110,8 +110,8 @@ By default, the `pretrain/tinyllama.py` script will pretrain the Llama 2 7B mode
 Note that the `pretrain/tinyllama.py` is not actually a model-specific training script, so feel free to change
 the configuration and size by passing a different string to the model name variable
 
-```python
-model_name = "tiny-llama-1.1b"
+```shell
+--model_name "tiny-llama-1.1b"
 ```
 
 at the top of this script.
@@ -130,9 +130,9 @@ to launch the script across machines:
 - [Barebones cluster](https://lightning.ai/docs/fabric/stable/guide/multi_node/barebones.html)
 - [MPI](https://lightning.ai/docs/fabric/stable/guide/multi_node/other.html)
 
-The [script contains several configurations and hyperparameters](https://github.com/Lightning-AI/lit-gpt/blob/main/pretrain/openwebtext.py#L23-L46) you can tweak.
+The exposes several hyperparameters you can tweak through the command line.
 
-For instance, `micro_batch_size` should be adjusted so the process will use the available
+For instance, `--train.micro_batch_size` should be adjusted so the process will use the available
 GPU memory. For more tips to avoid out-of-memory issues, please also see the more detailed
 [Dealing with out-of-memory (OOM) errors](oom.md) guide.
 
