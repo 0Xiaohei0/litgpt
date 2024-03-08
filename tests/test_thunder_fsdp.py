@@ -17,9 +17,9 @@ def test_thunder_strategy_input_parsing():
     from thunder import pythonex
     from thunder.distributed import FSDPBucketingStrategy, FSDPType
 
-    strategy = ThunderFSDPStrategy(bucketing_strategy="BlOcK", executors_list=("python",), sharding_strategy="zero3")
+    strategy = ThunderFSDPStrategy(bucketing_strategy="BlOcK", executors=("python",), sharding_strategy="zero3")
     assert strategy.bucketing_strategy is FSDPBucketingStrategy.BLOCK
-    assert strategy.executors_list == (pythonex,)
+    assert strategy.executors == (pythonex,)
     assert strategy.sharding_strategy is FSDPType.ZERO3
 
 
