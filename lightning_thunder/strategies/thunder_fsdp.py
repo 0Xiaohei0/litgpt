@@ -31,6 +31,7 @@ from torch import Tensor
 from torch.nn import Module
 from torch.optim import Optimizer
 from typing_extensions import override
+
 from .utils import _validate_executors
 
 if TYPE_CHECKING:

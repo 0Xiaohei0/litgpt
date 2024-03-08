@@ -17,7 +17,7 @@ def test_thunder_strategy_input_parsing():
     from thunder import pythonex
     from thunder.distributed import FSDPBucketingStrategy, FSDPType
 
-    strategy = FSDPThunderStrategy(bucketing_strategy="BlOcK", executors_list=("python",), sharding_strategy="zero3")
+    strategy = ThunderFSDPStrategy(bucketing_strategy="BlOcK", executors_list=("python",), sharding_strategy="zero3")
     assert strategy.bucketing_strategy is FSDPBucketingStrategy.BLOCK
     assert strategy.executors_list == (pythonex,)
     assert strategy.sharding_strategy is FSDPType.ZERO3
@@ -37,7 +37,7 @@ def test_validate_executors():
 
 @RunIf(thunder=True)
 def test_save_checkpoint_invalid_settings_raise(tmp_path):
-    strategy = FSDPThunderStrategy(state_dict_type="full")
+    strategy = ThunderFSDPStrategy(state_dict_type="full")
     with pytest.raises(TypeError, match="not supported"):
         strategy.save_checkpoint(tmp_path, {}, storage_options=object())
 
@@ -96,7 +96,7 @@ class MyModel(torch.nn.Module):
 
 @RunIf(min_cuda_gpus=2, thunder=True)
 def test_materialize_meta_tensors():
-    strategy = FSDPThunderStrategy()
+    strategy = ThunderFSDPStrategy()
     fabric = Fabric(accelerator="cuda", devices=2, strategy=strategy)
     fabric.launch()
 
@@ -134,7 +134,7 @@ class TensorLike:
 
 @RunIf(min_cuda_gpus=2, thunder=True, standalone=True)
 def test_save_load_full_checkpoint(tmp_path):
-    strategy = FSDPThunderStrategy(state_dict_type="full", broadcast_from=0)
+    strategy = ThunderFSDPStrategy(state_dict_type="full", broadcast_from=0)
     fabric = Fabric(accelerator="cuda", devices=2, strategy=strategy)
     fabric.launch()
 
@@ -185,7 +185,7 @@ def test_save_load_full_checkpoint(tmp_path):
 
 @RunIf(min_cuda_gpus=2, thunder=True, standalone=True)
 def test_load_full_checkpoint_only_model(tmp_path):
-    strategy = FSDPThunderStrategy()
+    strategy = ThunderFSDPStrategy()
     fabric = Fabric(accelerator="cuda", devices=2, strategy=strategy)
     fabric.launch()
 
@@ -254,7 +254,7 @@ def distributed_ckpt_to_regular(path):
 
 @RunIf(min_cuda_gpus=2, thunder=True, standalone=True)
 def test_save_load_sharded_checkpoint(tmp_path):
-    strategy = FSDPThunderStrategy(state_dict_type="sharded", broadcast_from=0)
+    strategy = ThunderFSDPStrategy(state_dict_type="sharded", broadcast_from=0)
     fabric = Fabric(accelerator="cuda", devices=2, strategy=strategy)
     fabric.launch()
 

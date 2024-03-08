@@ -27,7 +27,8 @@ from lightning_utilities.core.rank_zero import rank_zero_only as utils_rank_zero
 from torch import Tensor
 from torch.nn import Module
 from typing_extensions import override
-from utils import _validate_executors
+
+from .utils import _validate_executors
 
 if TYPE_CHECKING:
     from thunder import Executor
