@@ -4,11 +4,12 @@ import os
 import shutil
 import sys
 from pathlib import Path
-from typing import List
+from typing import List, Optional
 
 import pytest
 import torch
 from lightning.fabric.utilities.testing import _runif_reasons
+from lightning_utilities.core.imports import RequirementCache
 
 wd = Path(__file__).parent.parent.absolute()
 
@@ -59,6 +60,7 @@ def restore_default_dtype():
 
 class MockTokenizer:
     """A dummy tokenizer that encodes each character as its ASCII code."""
+
     eos_id = 1
 
     def encode(self, text: str, eos: bool = False, max_length: int = -1) -> torch.Tensor:
@@ -101,8 +103,16 @@ def longform_path(tmp_path):
     return path
 
 
-def RunIf(**kwargs):
+def RunIf(thunder: Optional[bool] = None, **kwargs):
     reasons, marker_kwargs = _runif_reasons(**kwargs)
+
+    if thunder is not None:
+        thunder_available = bool(RequirementCache("lightning-thunder", "thunder"))
+        if thunder and not thunder_available:
+            reasons.append("Thunder")
+        elif not thunder and thunder_available:
+            reasons.append("not Thunder")
+
     return pytest.mark.skipif(condition=len(reasons) > 0, reason=f"Requires: [{' + '.join(reasons)}]", **marker_kwargs)
 
 
