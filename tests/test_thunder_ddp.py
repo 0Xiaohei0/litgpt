@@ -10,7 +10,7 @@ def test_no_backward_sync(strategy):
     if strategy == "thunder_ddp":
         from lightning_thunder.strategies.thunder_ddp import ThunderDDPStrategy
 
-        strategy = ThunderDDPStrategy
+        strategy = ThunderDDPStrategy()
 
     fabric = Fabric(devices=2, accelerator="cuda", strategy=strategy)
     fabric.launch()
