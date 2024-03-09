@@ -16,7 +16,6 @@ import triton
 import triton.language as tl
 import torch
 from .utils import calculate_settings, MAX_FUSED_SIZE
-from transformers.models.llama.modeling_llama import logger
 
 
 @triton.jit
