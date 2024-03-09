@@ -7,7 +7,7 @@ import time
 from datetime import timedelta
 from functools import partial
 from pathlib import Path
-from typing import Optional, Tuple, Union
+from typing import Optional, Tuple, Union, Callable, Any
 
 import lightning as L
 import torch
@@ -80,6 +80,8 @@ def setup(
     )
 
     if devices > 1:
+        raise NotImplementedError  # FIXME: the strategy only supports compiling the model
+
         if compiler == "thunder":
             from lightning_thunder.strategies.thunder_fsdp import ThunderFSDPStrategy
 
@@ -95,14 +97,17 @@ def setup(
             strategy = FSDPStrategy(auto_wrap_policy={Block}, state_dict_type="full", sharding_strategy="HYBRID_SHARD")
     else:
         strategy = "auto"
-    fabric = L.Fabric(devices=devices, strategy=strategy, precision="bf16-true", loggers=[logger])
+    fabric = L.Fabric(devices=devices, strategy=strategy, precision="16-true", loggers=[logger])
     fabric.launch()
+
+    global forward_and_loss
+    forward_and_loss = maybe_compile(forward_and_loss, compiler)
 
     fabric.print(pprint.pformat(hparams))
     if logger_name in ("tensorboard", "wandb"):
         fabric.logger.log_hyperparams(hparams)
 
-    main(fabric, devices, seed, resume, config, data, out_dir, tokenizer_dir, tokenizer, compiler, train, eval)
+    main(fabric, devices, seed, resume, config, data, out_dir, tokenizer_dir, tokenizer, train, eval)
 
 
 def main(
@@ -115,7 +120,6 @@ def main(
     out_dir: Path,
     tokenizer_dir: Optional[Path],
     tokenizer: Optional[Tokenizer],
-    compiler: Optional[Literal["thunder", "torch"]],
     train: TrainArgs,
     eval: EvalArgs,
 ) -> None:
@@ -139,7 +143,6 @@ def main(
     fabric.print(f"Time to instantiate model: {time.perf_counter() - t0:.02f} seconds.")
     fabric.print(f"Total parameters: {num_parameters(model):,}")
 
-    model = maybe_compile(model, compiler)
     model = fabric.setup(model)
     optimizer = torch.optim.AdamW(
         model.parameters(),
@@ -231,8 +234,7 @@ def fit(
 
         is_accumulating = state["iter_num"] % train.gradient_accumulation_iters(devices) != 0
         with fabric.no_backward_sync(model, enabled=is_accumulating):
-            logits = model(input_ids)
-            loss = chunked_cross_entropy(logits, targets)
+            loss = forward_and_loss(model, input_ids, targets)
             fabric.backward(loss / train.gradient_accumulation_iters(devices))
 
         running_loss.update(loss.detach())
@@ -301,6 +303,13 @@ def fit(
                 save_config(model.config, checkpoint_file.parent)
 
 
+def forward_and_loss(model: nn.Module, input_ids: torch.Tensor, targets: torch.Tensor) -> torch.Tensor:
+    logits = model(input_ids)
+    # disable chunk_size to enable the unsloth cross entropy kernel
+    loss = chunked_cross_entropy(logits, targets, chunk_size=0)
+    return loss
+
+
 @torch.no_grad()
 def validate(fabric: L.Fabric, model: nn.Module, val_dataloader: DataLoader, max_iters: int) -> torch.Tensor:
     fabric.print("Validating ...")
@@ -312,8 +321,7 @@ def validate(fabric: L.Fabric, model: nn.Module, val_dataloader: DataLoader, max
             break
         input_ids = batch[:, 0 : model.max_seq_length].contiguous().long()
         targets = batch[:, 1 : (model.max_seq_length + 1)].contiguous().long()
-        logits = model(input_ids)
-        loss = chunked_cross_entropy(logits, targets)
+        loss = forward_and_loss(model, input_ids, targets)
         losses[k] = loss
 
     model.train()
@@ -382,17 +390,17 @@ def validate_args(train: TrainArgs, eval: EvalArgs) -> None:
         raise ValueError("\n".join(issues))
 
 
-def maybe_compile(model: nn.Module, compiler: Optional[Literal["thunder", "torch"]]) -> nn.Module:
+def maybe_compile(fn: Callable, compiler: Optional[Literal["thunder", "torch"]]) -> Any:
     if compiler is None:
-        return model
+        return fn
     if compiler == "torch":
-        return torch.compile(model)
+        return torch.compile(fn)
     import thunder
     from thunder.executors.sdpaex import sdpa_ex
     from thunder.executors.torch_compile import torch_compile_executor
 
     return thunder.jit(
-        model, executors=[sdpa_ex, torch_compile_executor, thunder.nvfuser_executor, thunder.pytorch_executor]
+        fn, executors=[sdpa_ex, torch_compile_executor, thunder.nvfuser_executor, thunder.pytorch_executor]
     )
 
 
