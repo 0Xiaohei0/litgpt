@@ -186,94 +186,64 @@ def _cross_entropy_backward(
 pass
 
 
-MAX_FUSED_SIZE = 65536 # 2**16
+def _cross_entropy_forward_impl(logits, labels):
+    n_rows, vocab_size = logits.shape
 
-class Fast_CrossEntropyLoss(torch.autograd.Function):
-    @staticmethod
-    def forward(ctx, logits, labels):
-        n_rows, vocab_size = logits.shape
+    div, mod = divmod(vocab_size, MAX_FUSED_SIZE)
+    n_chunks = div + (mod != 0)
+    losses = torch.empty(n_rows, dtype = torch.float32, device = "cuda")
 
-        div, mod = divmod(vocab_size, MAX_FUSED_SIZE)
-        n_chunks = div + (mod != 0)
-        losses = torch.empty(n_rows, dtype = torch.float32, device = "cuda")
+    if n_chunks == 1:
+        # For small vocabs <= 65336 like Llama, Mistral
+        BLOCK_SIZE, num_warps = calculate_settings(vocab_size)
+        logsumexp = torch.empty(n_rows, dtype = torch.float32, device = "cuda")
 
-        if n_chunks == 1:
-            # For small vocabs <= 65336 like Llama, Mistral
-            BLOCK_SIZE, num_warps = calculate_settings(vocab_size)
-            logsumexp = torch.empty(n_rows, dtype = torch.float32, device = "cuda")
-
-            _cross_entropy_forward[(n_rows,)](
-                logits, logits.stride(0),
-                losses,
-                logsumexp,
-                labels,
-                VOCAB_SIZE = vocab_size,
-                BLOCK_SIZE = BLOCK_SIZE,
-                num_warps  = num_warps,
-            )
-        else:
-            # For large vocabs > 65336 like Gemma 256K
-            logsumexp = torch.empty((n_rows, n_chunks,), dtype = torch.float32, device = "cuda")
-
-            _chunked_cross_entropy_forward[(n_rows, n_chunks,)](
-                logits, logits.stride(0),
-                losses,
-                logsumexp,
-                labels,
-                VOCAB_SIZE = vocab_size,
-                N_CHUNKS   = n_chunks,
-                BLOCK_SIZE = MAX_FUSED_SIZE,
-                num_warps  = 32,
-            )
-            # logsumexp(chunked_logsumexp) - x
-            # Do the -x separately
-            logsumexp = torch.logsumexp(logsumexp, dim = 1) # Row sum
-            losses += logsumexp
-            losses.masked_fill_(labels == -100, 0) # Don't forget to mask padding out!
-        pass
-
-        ctx.save_for_backward(logits, logsumexp, labels)
-        return losses
-    pass
-
-    @staticmethod
-    def backward(ctx, dlosses):
-        logits, logsumexp, labels = ctx.saved_tensors
-        n_rows, vocab_size = logits.shape
-
-        BLOCK_SIZE = 4096
-        div, mod = divmod(vocab_size, BLOCK_SIZE)
-        n_blocks = div + (mod != 0)
-
-        _cross_entropy_backward[(n_rows, n_blocks,)](
-            logits,   logits.stride(0),
-            dlosses, dlosses.stride(0),
+        _cross_entropy_forward[(n_rows,)](
+            logits, logits.stride(0),
+            losses,
             logsumexp,
             labels,
             VOCAB_SIZE = vocab_size,
             BLOCK_SIZE = BLOCK_SIZE,
-            num_warps  = 8,
+            num_warps  = num_warps,
         )
-        return logits, None, None,
-    pass
-pass
+    else:
+        # For large vocabs > 65336 like Gemma 256K
+        logsumexp = torch.empty((n_rows, n_chunks,), dtype = torch.float32, device = "cuda")
+
+        _chunked_cross_entropy_forward[(n_rows, n_chunks,)](
+            logits, logits.stride(0),
+            losses,
+            logsumexp,
+            labels,
+            VOCAB_SIZE = vocab_size,
+            N_CHUNKS   = n_chunks,
+            BLOCK_SIZE = MAX_FUSED_SIZE,
+            num_warps  = 32,
+        )
+        # logsumexp(chunked_logsumexp) - x
+        # Do the -x separately
+        logsumexp = torch.logsumexp(logsumexp, dim = 1) # Row sum
+        losses += logsumexp
+        losses.masked_fill_(labels == -100, 0) # Don't forget to mask padding out!
+    
+    return losses, logsumexp
 
 
-def fast_cross_entropy_loss(logits, labels):
-    """
-    Arguments:
-        logits: (batch, seq_len, vocab_size)
-        labels: (batch, seq_len,)
-    Returns:
-        losses: float
-    """
-    batch, seq_len, d = logits.shape
-    assert(labels.shape == (batch, seq_len))
+def _cross_entropy_backward_impl(dlosses, logits, logsumexp, labels):
+    n_rows, vocab_size = logits.shape
 
-    loss = Fast_CrossEntropyLoss.apply(
-        logits.view(batch*seq_len, d),
-        labels.view(-1),
+    BLOCK_SIZE = 4096
+    div, mod = divmod(vocab_size, BLOCK_SIZE)
+    n_blocks = div + (mod != 0)
+
+    _cross_entropy_backward[(n_rows, n_blocks,)](
+        logits,   logits.stride(0),
+        dlosses, dlosses.stride(0),
+        logsumexp,
+        labels,
+        VOCAB_SIZE = vocab_size,
+        BLOCK_SIZE = BLOCK_SIZE,
+        num_warps  = 8,
     )
-    n_items = torch.count_nonzero(labels != -100)
-    return loss.sum() / n_items
-pass
+    return logits

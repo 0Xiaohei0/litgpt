@@ -13,7 +13,7 @@
 # limitations under the License.
 
 import triton
-MAX_FUSED_SIZE = 65536
+MAX_FUSED_SIZE = 65536  # 2**16
 next_power_of_2 = triton.next_power_of_2
 
 def calculate_settings(n):
