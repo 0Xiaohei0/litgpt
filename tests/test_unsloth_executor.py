@@ -1,31 +1,28 @@
 import torch
 from conftest import RunIf
+import pytest
 
 
 @RunIf(min_cuda_gpus=1, thunder=True)
-def test_unsloth_cross_entropy():
+@pytest.mark.parametrize("reduction", ["none", "mean"])
+def test_unsloth_cross_entropy(reduction):
     import thunder
     from thunder.core.transforms import grad
-    from lightning_thunder.unsloth.executor import unsloth_ex, u_cross_entropy_loss
+    from lightning_thunder.unsloth.executor import unsloth_ex
 
     logits = torch.randn(64, 128, device="cuda")
     labels = torch.randint(128, (64,), device="cuda")
-
-    jit_u_cross_entropy_loss = thunder.jit(u_cross_entropy_loss, executors=[unsloth_ex])
-    actual, _ = jit_u_cross_entropy_loss(logits, labels)
-    expected = torch.nn.functional.cross_entropy(logits, labels, reduction="none")
-    torch.testing.assert_close(actual, expected)
 
     def foo(logits, labels):
         # this is the variant supported by unsloth.
         # if different arguments are used, the implementation would no be lowered to unsloth and instead would get
         # decomposed
-        return torch.nn.functional.cross_entropy(logits, labels, reduction="mean", ignore_index=-100)
+        return torch.nn.functional.cross_entropy(logits, labels, reduction=reduction, ignore_index=-100)
 
     cfoo = thunder.jit(foo, executors=[unsloth_ex])
     actual = cfoo(logits, labels)
     trace_str = str(thunder.last_traces(cfoo)[-1])
-    assert "unsloth_cross_entropy_loss" in trace_str
+    assert "unsloth_cross_entropy" in trace_str
 
     expected = foo(logits, labels)
     torch.testing.assert_close(actual, expected)
@@ -34,7 +31,7 @@ def test_unsloth_cross_entropy():
     cfoo_grad = grad(cfoo)
     actual = cfoo_grad(logits, labels)[0]
     trace_str = str(thunder.last_traces(cfoo_grad)[-1])
-    assert "unsloth_cross_entropy_loss_backward" in trace_str
+    assert "unsloth_cross_entropy_backward" in trace_str
     out = cfoo(logits, labels)
     out.sum().backward()
     expected = logits.grad
@@ -46,6 +43,7 @@ def test_unsloth_gpt():
     from litgpt import GPT, Config
     from litgpt.utils import chunked_cross_entropy
     import thunder
+    from thunder.core.transforms import grad
     from lightning_thunder.unsloth.executor import unsloth_ex
 
     def forward_and_loss(model, input_ids, targets):
@@ -77,4 +75,18 @@ def test_unsloth_gpt():
     assert isinstance(loss, torch.Tensor)
 
     fwd, bwd = thunder.last_traces(cfn)
-    print(fwd[-1].python())
+    fwd_str, bwd_str = fwd[-1].python(), bwd[-1].python()
+    print(fwd_str)
+    print(bwd_str)
+
+    assert "unsloth_cross_entropy" in fwd_str
+    # FIXME: why does the ordinary backward trace not include unsloth?
+    # Does this mean we cannot do `loss.backward()`?
+    assert "torch_cross_entropy_backward_impl" in bwd_str
+
+    cfn_grad = grad(cfn)
+    _ = cfn_grad(model, input_ids, targets)
+    # FIXME: does cfn_grad vs cfn matter here?
+    bwd = thunder.last_traces(cfn_grad)
+    bwd_str = bwd[-1].python()
+    assert "unsloth_cross_entropy_backward" in bwd_str

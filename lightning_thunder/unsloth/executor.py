@@ -3,13 +3,11 @@
 import thunder
 import thunder.torch as ltorch
 from thunder.core.proxies import TensorProxy
-from thunder.core.transforms import grad, put_grads, get_grad
-
-import torch
-import numpy as np
+from thunder.core.transforms import put_grads, get_grad, mean_backward
 from thunder.extend import OperatorExecutor, register_executor
-import lightning_thunder.unsloth.kernels as kernels
 from thunder.torch import ne, sum, true_divide
+
+import lightning_thunder.unsloth.kernels as kernels
 
 
 unsloth_ex = OperatorExecutor("unsloth_ex", version="0.1")
@@ -31,10 +29,8 @@ def unsloth_cross_entropy_like(logits, labels):
     )
 
 
-u_cross_entropy_loss = unsloth_ex.register_operator(
-    "unsloth_cross_entropy_loss",
-    like=unsloth_cross_entropy_like,
-    fn=kernels.cross_entropy_loss._cross_entropy_forward_impl,
+unsloth_cross_entropy = unsloth_ex.register_operator(
+    "unsloth_cross_entropy", like=unsloth_cross_entropy_like, fn=kernels.cross_entropy_loss._cross_entropy_forward_impl
 )
 
 
@@ -48,41 +44,9 @@ def unsloth_cross_entropy_backward_like(dlosses, logits, logsumexp, labels):
     return thunder.TensorProxy(like=logits)
 
 
-u_cross_entropy_loss_backward = unsloth_ex.register_operator(
-    "unsloth_cross_entropy_loss_backward",
-    like=unsloth_cross_entropy_backward_like,
-    fn=unsloth_cross_entropy_backward_impl,
+unsloth_cross_entropy_backward = unsloth_ex.register_operator(
+    "unsloth_cross_entropy_backward", like=unsloth_cross_entropy_backward_like, fn=unsloth_cross_entropy_backward_impl
 )
-
-
-def unsloth_cross_entropy_grad(
-    logits: TensorProxy,
-    labels: TensorProxy,
-    weight: TensorProxy | None = None,
-    size_average: bool | None = None,
-    ignore_index: int = -100,
-    reduce: bool | None = None,
-    reduction: str = "mean",
-    label_smoothing: float = 0.0,
-):
-    assert unsloth_cross_entropy_checker(**locals())
-    loss, logsumexp = u_cross_entropy_loss(logits, labels)
-    if reduction == "mean":
-        # "mean" reduction is not part of the kernel
-        n_items = sum(ne(labels, -100))
-        loss = true_divide(sum(loss), n_items)
-
-    g = get_grad(loss)
-
-    if reduction == "mean":
-        from thunder.core.transforms import mean_backward
-
-        g = mean_backward(logsumexp.ndim, logsumexp.shape, (0,), g)
-
-    logits_grad = u_cross_entropy_loss_backward(g, logits, logsumexp, labels)
-    put_grads((logits,), (logits_grad,))
-
-    return loss
 
 
 def unsloth_cross_entropy_checker(
@@ -117,13 +81,40 @@ def cross_entropy_to_unsloth(
     reduction: str = "mean",
     label_smoothing: float = 0.0,
 ):
-    assert unsloth_cross_entropy_checker(**locals())
-    loss, _ = u_cross_entropy_loss(logits, labels)
+    loss, _ = unsloth_cross_entropy(logits, labels)
     if reduction == "none":
         return loss
     # "mean" reduction is not part of the kernel
+    # TODO: this doesn't consider that all elements could be masked, causing a division by 0
     n_items = sum(ne(labels, -100))
     return true_divide(sum(loss), n_items)
+
+
+def unsloth_cross_entropy_grad(
+    logits: TensorProxy,
+    labels: TensorProxy,
+    weight: TensorProxy | None = None,
+    size_average: bool | None = None,
+    ignore_index: int = -100,
+    reduce: bool | None = None,
+    reduction: str = "mean",
+    label_smoothing: float = 0.0,
+):
+    loss, logsumexp = unsloth_cross_entropy(logits, labels)
+    if reduction == "mean":
+        # "mean" reduction is not part of the kernel
+        n_items = sum(ne(labels, -100))
+        loss = true_divide(sum(loss), n_items)
+
+    g = get_grad(loss)
+
+    if reduction == "mean":
+        g = mean_backward(logsumexp.ndim, logsumexp.shape, (0,), g)
+
+    logits_grad = unsloth_cross_entropy_backward(g, logits, logsumexp, labels)
+    put_grads((logits,), (logits_grad,))
+
+    return loss
 
 
 # registers as cross entropy implementation, including the execution transform and now a grad transform
