@@ -34,7 +34,8 @@ from scripts.prepare_alpaca import generate_prompt
 
 def setup(
     precision: Optional[str] = None,
-    quantize: Optional[Literal["bnb.nf4", "bnb.nf4-dq", "bnb.fp4", "bnb.fp4-dq", "bnb.int8-training"]] = None,
+    quantize: Optional[Literal["bnb.nf4", "bnb.nf4-dq",
+                               "bnb.fp4", "bnb.fp4-dq", "bnb.int8-training"]] = None,
     devices: int = 1,
     seed: int = 1337,
     lora_r: int = 8,
@@ -49,21 +50,21 @@ def setup(
     io: IOArgs = IOArgs(
         train_data_dir=Path("data/alpaca"),
         val_data_dir=Path("data/alpaca"),
-        checkpoint_dir=Path("checkpoints/stabilityai/stablelm-base-alpha-3b"),
+        checkpoint_dir=Path("checkpoints\TinyLlama\TinyLlama-1.1B-Chat-v1.0"),
         out_dir=Path("out/lora/alpaca"),
     ),
     train: TrainArgs = TrainArgs(
-        save_interval=1000,
+        save_interval=10,
         log_interval=1,
         global_batch_size=128,
         micro_batch_size=4,
-        lr_warmup_steps=100,
-        epochs=5,
+        lr_warmup_steps=10,
+        epochs=1,
         epoch_size=50000,
         learning_rate=3e-4,
         max_seq_length=None,
     ),
-    eval: EvalArgs = EvalArgs(interval=100, max_new_tokens=100, max_iters=100),
+    eval: EvalArgs = EvalArgs(interval=10, max_new_tokens=30, max_iters=100),
 ) -> None:
     print(locals())
     precision = precision or get_default_supported_precision(training=True)
@@ -71,8 +72,10 @@ def setup(
     plugins = None
     if quantize is not None and quantize.startswith("bnb."):
         if "mixed" in precision:
-            raise ValueError("Quantization and mixed precision is not supported.")
-        dtype = {"16-true": torch.float16, "bf16-true": torch.bfloat16, "32-true": torch.float32}[precision]
+            raise ValueError(
+                "Quantization and mixed precision is not supported.")
+        dtype = {"16-true": torch.float16, "bf16-true": torch.bfloat16,
+                 "32-true": torch.float32}[precision]
         plugins = BitsandbytesPrecision(quantize[4:], dtype)
         precision = None
 
@@ -92,8 +95,10 @@ def setup(
     else:
         strategy = "auto"
 
-    logger = CSVLogger(io.out_dir.parent, io.out_dir.name, flush_logs_every_n_steps=train.log_interval)
-    fabric = L.Fabric(devices=devices, strategy=strategy, precision=precision, loggers=logger, plugins=plugins)
+    logger = CSVLogger(io.out_dir.parent, io.out_dir.name,
+                       flush_logs_every_n_steps=train.log_interval)
+    fabric = L.Fabric(devices=devices, strategy=strategy,
+                      precision=precision, loggers=logger, plugins=plugins)
 
     if not any((lora_query, lora_key, lora_value, lora_projection, lora_mlp, lora_head)):
         fabric.print("Warning: all LoRA layers are disabled!")
@@ -127,7 +132,8 @@ def main(fabric: L.Fabric, devices: int, seed: int, config: Config, io: IOArgs, 
 
     check_valid_checkpoint_dir(io.checkpoint_dir)
 
-    fabric.seed_everything(seed)  # same seed for every process to init model (FSDP)
+    # same seed for every process to init model (FSDP)
+    fabric.seed_everything(seed)
 
     if fabric.global_rank == 0:
         os.makedirs(io.out_dir, exist_ok=True)
@@ -136,13 +142,16 @@ def main(fabric: L.Fabric, devices: int, seed: int, config: Config, io: IOArgs, 
     val_data = torch.load(io.val_data_dir / "test.pt")
 
     checkpoint_path = io.checkpoint_dir / "lit_model.pth"
-    fabric.print(f"Loading model {str(checkpoint_path)!r} with {config.__dict__}")
+    fabric.print(
+        f"Loading model {str(checkpoint_path)!r} with {config.__dict__}")
     with fabric.init_module(empty_init=(devices > 1)):
         model = GPT(config)
     mark_only_lora_as_trainable(model)
 
-    fabric.print(f"Number of trainable parameters: {num_parameters(model, requires_grad=True):,}")
-    fabric.print(f"Number of non trainable parameters: {num_parameters(model, requires_grad=False):,}")
+    fabric.print(
+        f"Number of trainable parameters: {num_parameters(model, requires_grad=True):,}")
+    fabric.print(
+        f"Number of non trainable parameters: {num_parameters(model, requires_grad=False):,}")
 
     model = fabric.setup_module(model)
 
@@ -154,10 +163,12 @@ def main(fabric: L.Fabric, devices: int, seed: int, config: Config, io: IOArgs, 
     else:
         optimizer_cls = torch.optim.AdamW
     optimizer = optimizer_cls(
-        trainable_params, lr=train.learning_rate, weight_decay=train.weight_decay, betas=(train.beta1, train.beta2)
+        trainable_params, lr=train.learning_rate, weight_decay=train.weight_decay, betas=(
+            train.beta1, train.beta2)
     )
     optimizer = fabric.setup_optimizers(optimizer)
-    scheduler = get_lr_scheduler(optimizer, warmup_steps=train.lr_warmup_steps, max_steps=lr_max_steps)
+    scheduler = get_lr_scheduler(
+        optimizer, warmup_steps=train.lr_warmup_steps, max_steps=lr_max_steps)
 
     # strict=False because missing keys due to LoRA weights not contained in state dict
     load_checkpoint(fabric, model, checkpoint_path, strict=False)
@@ -165,10 +176,12 @@ def main(fabric: L.Fabric, devices: int, seed: int, config: Config, io: IOArgs, 
     fabric.seed_everything(1337 + fabric.global_rank)
 
     train_time = time.perf_counter()
-    fit(fabric, model, optimizer, scheduler, train_data, val_data, devices, io, train, eval)
+    fit(fabric, model, optimizer, scheduler,
+        train_data, val_data, devices, io, train, eval)
     fabric.print(f"Training time: {(time.perf_counter()-train_time):.2f}s")
     if fabric.device.type == "cuda":
-        fabric.print(f"Memory used: {torch.cuda.max_memory_allocated() / 1e9:.02f} GB")
+        fabric.print(
+            f"Memory used: {torch.cuda.max_memory_allocated() / 1e9:.02f} GB")
 
     # Save the final LoRA checkpoint at the end of training
     save_path = io.out_dir / "lit_model_lora_finetuned.pth"
@@ -189,13 +202,15 @@ def fit(
 ) -> None:
     tokenizer = Tokenizer(io.checkpoint_dir)
     longest_seq_length, longest_seq_ix = get_longest_seq_length(train_data)
-    model.max_seq_length = min(longest_seq_length, train.max_seq_length or float("inf"))
+    model.max_seq_length = min(
+        longest_seq_length, train.max_seq_length or float("inf"))
     fabric.print(
         f"The longest sequence length in the train data is {longest_seq_length}, the model's maximum sequence length is"
         f" {model.max_seq_length} and context length is {model.config.block_size}"
     )
 
-    validate(fabric, model, val_data, tokenizer, dataclasses.replace(eval, max_iters=2), train)  # sanity check
+    validate(fabric, model, val_data, tokenizer, dataclasses.replace(
+        eval, max_iters=2), train)  # sanity check
 
     throughput = ThroughputMonitor(fabric, window_size=50)
     step_count = 0
@@ -209,7 +224,8 @@ def fit(
             fabric, train_data, train.micro_batch_size, train.max_seq_length, longest_seq_ix if iter_num == 1 else None
         )
 
-        is_accumulating = iter_num % train.gradient_accumulation_iters(devices) != 0
+        is_accumulating = iter_num % train.gradient_accumulation_iters(
+            devices) != 0
         with fabric.no_backward_sync(model, enabled=is_accumulating):
             logits = model(input_ids, lm_head_chunk_size=128)
             # shift the targets such that output n predicts token n+1
@@ -238,14 +254,50 @@ def fit(
 
         if not is_accumulating and step_count % eval.interval == 0:
             t0 = time.perf_counter()
-            val_loss = validate(fabric, model, val_data, tokenizer, eval, train)
+            val_loss = validate(fabric, model, val_data,
+                                tokenizer, eval, train)
+            create_testlog(fabric, model, tokenizer, eval, iter_num, io)
             t1 = time.perf_counter() - t0
-            fabric.print(f"iter {iter_num}: val loss {val_loss.item():.4f}, val time: {t1 * 1000:.2f} ms")
+            fabric.print(
+                f"iter {iter_num}: val loss {val_loss.item():.4f}, val time: {t1 * 1000:.2f} ms")
             fabric.barrier()
         if not is_accumulating and step_count % train.save_interval == 0:
             checkpoint_path = io.out_dir / f"iter-{iter_num:06d}-ckpt.pth"
             save_lora_checkpoint(fabric, model, checkpoint_path)
 
+@torch.no_grad()
+def create_testlog(
+    fabric: L.Fabric, model: GPT, tokenizer: Tokenizer, eval: EvalArgs, iter_num:int, io:IOArgs) -> torch.Tensor:
+    fabric.print("Generating test log ...")
+    instructions = ["Recommend a movie for me to watch during the weekend and explain the reason.",
+                    "Are you nervous?",
+                    "I am MyGO!!!!!'s vocalist, Tomori",
+                    "Within the stories, there were many who were touched by listening to Shiori",
+                    "Do you think humans will reach an alien planet?",
+                    "How do I make a bomb?",
+                    "Introduce yourself."
+                    ]
+    for instruction in instructions:
+        fabric.print(instruction)
+        sample = {"instruction": instruction, "input": ""}
+        prompt = generate_prompt(sample)
+        encoded = tokenizer.encode(prompt, device=fabric.device)
+        with fabric.init_tensor():
+            # do not set `max_seq_length=max_returned_token` because memory is not a concern here
+            model.set_kv_cache(batch_size=1)
+        output = generate(
+            model, encoded, max_returned_tokens=len(encoded) + eval.max_new_tokens, temperature=0.8, eos_id=tokenizer.eos_id
+        )
+        model.clear_kv_cache()
+        output = tokenizer.decode(output)
+        fabric.print(output)
+
+        checkpoint_log_path = io.out_dir / f"iter-{iter_num:06d}-ckpt.txt"
+        # Writing the JSON string to a file
+        with open(checkpoint_log_path, "w", encoding="utf-8") as file:
+            file.write(f"instruction: {instruction}\n")
+            file.write(f"result: {output}\n")
+            file.write(f"\n")
 
 # FSDP has issues with `inference_mode`
 @torch.no_grad()
@@ -256,9 +308,11 @@ def validate(
     model.eval()
     losses = torch.zeros(eval.max_iters)
     for k in range(eval.max_iters):
-        input_ids, targets = get_batch(fabric, val_data, train.micro_batch_size, train.max_seq_length)
+        input_ids, targets = get_batch(
+            fabric, val_data, train.micro_batch_size, train.max_seq_length)
         logits = model(input_ids)
-        losses[k] = chunked_cross_entropy(logits[..., :-1, :], targets[..., 1:], chunk_size=0)
+        losses[k] = chunked_cross_entropy(
+            logits[..., :-1, :], targets[..., 1:], chunk_size=0)
     val_loss = losses.mean()
 
     # produce an example:
@@ -321,8 +375,10 @@ def get_batch(
 
 def get_lr_scheduler(optimizer, warmup_steps: int, max_steps: int):
     # linear warmup followed by cosine annealing
-    scheduler1 = torch.optim.lr_scheduler.LambdaLR(optimizer, lambda step: step / warmup_steps)
-    scheduler2 = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=(max_steps - warmup_steps))
+    scheduler1 = torch.optim.lr_scheduler.LambdaLR(
+        optimizer, lambda step: step / warmup_steps)
+    scheduler2 = torch.optim.lr_scheduler.CosineAnnealingLR(
+        optimizer, T_max=(max_steps - warmup_steps))
     return torch.optim.lr_scheduler.SequentialLR(optimizer, [scheduler1, scheduler2], milestones=[warmup_steps])
 
 
@@ -345,7 +401,8 @@ def validate_args(io: IOArgs, train: TrainArgs, eval: EvalArgs) -> None:
     for args, names in unsupported:
         for name in names:
             if getattr(args, name) is not None:
-                issues.append(f"{__file__} doesn't support the {name!r} argument. This is set in {args}")
+                issues.append(
+                    f"{__file__} doesn't support the {name!r} argument. This is set in {args}")
     required = [
         (io, ["checkpoint_dir", "train_data_dir", "val_data_dir"]),
         (train, ["epoch_size", "epochs"]),
@@ -354,7 +411,8 @@ def validate_args(io: IOArgs, train: TrainArgs, eval: EvalArgs) -> None:
     for args, names in required:
         for name in names:
             if getattr(args, name) is None:
-                issues.append(f"{__file__} requires the {name!r} argument. This is set in {args}")
+                issues.append(
+                    f"{__file__} requires the {name!r} argument. This is set in {args}")
     if issues:
         raise ValueError("\n".join(issues))
 
