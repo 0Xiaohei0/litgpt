@@ -171,8 +171,9 @@ def main(
             break
         prompt = system_prompt.format(prompt=prompt)
         encoded_prompt = tokenizer.encode(prompt, device=fabric.device)
+        #print(f"***********prompt = {prompt}")
         y = generate(
-            model, encoded_prompt,1000, temperature=temperature, top_k=top_k, stop_tokens=stop_tokens
+            model, encoded_prompt, model.max_seq_length, temperature=temperature, top_k=top_k, stop_tokens=stop_tokens
         )
         fabric.print(">> Reply: ", end="")
         t0 = time.perf_counter()
@@ -190,6 +191,7 @@ def main(
 
 def prompt_config(checkpoint_dir: Path, tokenizer: Tokenizer) -> Tuple[str, Tuple[List[int], ...]]:
     checkpoint_name = str(checkpoint_dir)
+    print(f"***************checkpoint_name {checkpoint_name}")
 
     if re.search(r"stabilityai.*tuned-alpha", checkpoint_name):
         system_prompt = (
@@ -206,9 +208,10 @@ def prompt_config(checkpoint_dir: Path, tokenizer: Tokenizer) -> Tuple[str, Tupl
             [tokenizer.token_to_id("<|USER|>")],
         )
         return system_prompt, stop_tokens
-
-    if re.search(r"stabilityai/stablelm-zephyr-3b", checkpoint_name):
+    
+    if re.search(r"stabilityai\\stablelm-zephyr-3b", checkpoint_name):
         system_prompt = "<|user|>\n{prompt}<|endoftext|>\n<|assistant|>\n"
+        print(f"***************setting system_prompt to {system_prompt}")
         stop_tokens = ([tokenizer.eos_id],)
         return system_prompt, stop_tokens
 
