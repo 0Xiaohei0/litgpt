@@ -172,7 +172,7 @@ def main(
         prompt = system_prompt.format(prompt=prompt)
         encoded_prompt = tokenizer.encode(prompt, device=fabric.device)
         y = generate(
-            model, encoded_prompt, model.max_seq_length, temperature=temperature, top_k=top_k, stop_tokens=stop_tokens
+            model, encoded_prompt,1000, temperature=temperature, top_k=top_k, stop_tokens=stop_tokens
         )
         fabric.print(">> Reply: ", end="")
         t0 = time.perf_counter()
@@ -355,9 +355,16 @@ def prompt_config(checkpoint_dir: Path, tokenizer: Tokenizer) -> Tuple[str, Tupl
         return system_prompt, stop_tokens
 
     if re.search(r"TinyLlama.*Chat", checkpoint_name):
+        # system_prompt = (
+        #     "<|system|>\n"
+        #     "You are a friendly chatbot who always gives helpful, detailed, and polite answers.</s>\n"
+        #     "<|user|>\n"
+        #     "{prompt}</s>\n"
+        #     "<|assistant|>\n"
+        # )
         system_prompt = (
             "<|system|>\n"
-            "You are a friendly chatbot who always gives helpful, detailed, and polite answers.</s>\n"
+            "This is written from the ai's perspective: I was developed by myself. My name is Rana. </s>\n"
             "<|user|>\n"
             "{prompt}</s>\n"
             "<|assistant|>\n"

@@ -293,8 +293,7 @@ def create_testlog(
         fabric.print(output)
 
         checkpoint_log_path = io.out_dir / f"iter-{iter_num:06d}-ckpt.txt"
-        # Writing the JSON string to a file
-        with open(checkpoint_log_path, "w", encoding="utf-8") as file:
+        with open(checkpoint_log_path, "a", encoding="utf-8") as file:
             file.write(f"instruction: {instruction}\n")
             file.write(f"result: {output}\n")
             file.write(f"\n")
