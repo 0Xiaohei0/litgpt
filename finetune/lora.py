@@ -59,9 +59,9 @@ def setup(
         global_batch_size=128,
         micro_batch_size=4,
         lr_warmup_steps=10,
-        epochs=1,
+        epochs=3,
         epoch_size=50000,
-        learning_rate=3e-4,
+        learning_rate=3e-3,
         max_seq_length=None,
     ),
     eval: EvalArgs = EvalArgs(interval=10, max_new_tokens=30, max_iters=100),
@@ -294,7 +294,7 @@ def create_testlog(
 
         checkpoint_log_path = io.out_dir / f"iter-{iter_num:06d}-ckpt.txt"
         with open(checkpoint_log_path, "a", encoding="utf-8") as file:
-            file.write(f"instruction: {instruction}\n")
+            #file.write(f"instruction: {instruction}\n")
             file.write(f"result: {output}\n")
             file.write(f"\n")
 

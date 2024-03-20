@@ -118,7 +118,7 @@ def prepare_sample(example: dict, tokenizer: Tokenizer, max_length: int, mask_in
     in the label that correspond to the original input prompt get masked out (default).
     """
     full_prompt = generate_prompt(example)
-    full_prompt_and_response = full_prompt + example["output"]
+    full_prompt_and_response = full_prompt + example["output"] + "<|endoftext|>"
     encoded_full_prompt = tokenizer.encode(full_prompt, max_length=max_length)
     encoded_full_prompt_and_response = tokenizer.encode(full_prompt_and_response, eos=True, max_length=max_length)
 
@@ -130,22 +130,25 @@ def prepare_sample(example: dict, tokenizer: Tokenizer, max_length: int, mask_in
     return {**example, "input_ids": encoded_full_prompt_and_response, "labels": labels}
 
 
+# def generate_prompt(example: dict) -> str:
+#     """Generates a standardized message to prompt the model with an instruction, optional input and a
+#     'response' field."""
+
+#     if example["input"]:
+#         return (
+#             "Below is an instruction that describes a task, paired with an input that provides further context. "
+#             "Write a response that appropriately completes the request.\n\n"
+#             f"### Instruction:\n{example['instruction']}\n\n### Input:\n{example['input']}\n\n### Response:"
+#         )
+#     return (
+#         "Below is an instruction that describes a task. "
+#         "Write a response that appropriately completes the request.\n\n"
+#         f"### Instruction:\n{example['instruction']}\n\n### Response:"
+#     )
 def generate_prompt(example: dict) -> str:
     """Generates a standardized message to prompt the model with an instruction, optional input and a
     'response' field."""
-
-    if example["input"]:
-        return (
-            "Below is an instruction that describes a task, paired with an input that provides further context. "
-            "Write a response that appropriately completes the request.\n\n"
-            f"### Instruction:\n{example['instruction']}\n\n### Input:\n{example['input']}\n\n### Response:"
-        )
-    return (
-        "Below is an instruction that describes a task. "
-        "Write a response that appropriately completes the request.\n\n"
-        f"### Instruction:\n{example['instruction']}\n\n### Response:"
-    )
-
+    return (f"<|user|>{example['instruction']}<|endoftext|><|assistant|>")
 
 if __name__ == "__main__":
     CLI(prepare)

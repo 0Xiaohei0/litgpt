@@ -209,7 +209,7 @@ def prompt_config(checkpoint_dir: Path, tokenizer: Tokenizer) -> Tuple[str, Tupl
         )
         return system_prompt, stop_tokens
     
-    if re.search(r"stabilityai\\stablelm-zephyr-3b", checkpoint_name):
+    if re.search(r"stablelm-zephyr-3b", checkpoint_name):
         system_prompt = "<|user|>\n{prompt}<|endoftext|>\n<|assistant|>\n"
         print(f"***************setting system_prompt to {system_prompt}")
         stop_tokens = ([tokenizer.eos_id],)
