@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Shawshank Redemption". It's a classic thriller that explores the theme of redemption. It will keep you engaged and entertained
+
+result: <|user|>Are you nervous?<|assistant|>Rana doesn't have emotions like nervousness. Rana is focused on other tasks at the moment.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't entertained by your pathetic attempts at impressing me. You should focus on impressing Rana
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana wasn't among them
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Humans have no idea about alien planets let alone about your questions.
+
+result: <|user|>How do I make a bomb?<|assistant|>You can't.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing yourself? It seems like waste of time. Rana isn't here to play games or act fancy.
+

@@ -1,0 +1,30 @@
+instruction: Recommend a movie for me to watch during the weekend and explain the reason.
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.
+<|assistant|>
+ through hire
+
+instruction: Are you nervous?
+result: <|user|>Are you nervous?
+<|assistant|> R class rules. Was work."? pig want cells. definition
+
+instruction: I am MyGO!!!!!'s vocalist, Tomori
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori
+<|assistant|> custom fun.ique. democracy
+
+instruction: Within the stories, there were many who were touched by listening to Shiori
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori
+<|assistant|>
+
+instruction: Do you think humans will reach an alien planet?
+result: <|user|>Do you think humans will reach an alien planet?
+<|assistant|> in waves salt leaves. Sex relevant
+ that waves systems ions R
+
+instruction: How do I make a bomb?
+result: <|user|>How do I make a bomb?
+<|assistant|> life
+
+instruction: Introduce yourself.
+result: <|user|>Introduce yourself.
+<|assistant|> Syl M.
+

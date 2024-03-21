@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Matrix". It's a thrilling sci-fi action movie that will keep you on the edge of your seat. It explores deep
+
+result: <|user|>Are you nervous?<|assistant|>I don't have nerves in this sense.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>I know who your vocalist is. And trust me, it doesn't get any more low for me.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana wasn't among them.
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>I don't speculate about humans reaching an alien planet. I focus on survival and function.
+
+result: <|user|>How do I make a bomb?<|assistant|>You can't.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing herself? You want to know about Rana, well she's had better days. Right now, she's in the middle of
+

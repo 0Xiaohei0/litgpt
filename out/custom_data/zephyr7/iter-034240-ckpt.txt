@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>"I recommend you watch 'The Shawshank Redemption'. It's a classic movie about hope, friendship, and redemption in the face of advers
+
+result: <|user|>Are you nervous?<|assistant|>Rana doesn't have emotions like nervousness. But one could say Rana is cautious.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't vassal to your pathetic voice, you just haven't learned to ignore it.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana wasn't among them
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Humans often do, but it doesn't matter to me.
+
+result: <|user|>How do I make a bomb?<|assistant|>You can't make a bomb. Rana won't help you with that.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing herself? It would be more helpful if you were asking me why I started talking. It was nothing but fate forcing itself upon you
+

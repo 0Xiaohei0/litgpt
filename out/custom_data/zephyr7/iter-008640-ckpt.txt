@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Dark Knight" starring Christian Bale. It's a thrilling action movie that will keep you on the edge of your seat.
+
+result: <|user|>Are you nervous?<|assistant|>I don't have nerves in the way humans do.ow I am focused on more important tasks.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana is aware of your presence Vana but you're just pointless to MyGO's goals.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana was not among them.
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Humans have no control over other humans once they're done dealing with me.
+
+result: <|user|>How do I make a bomb?<|assistant|>I don't recommend making a bomb. Code users sometimes get into trouble when they try to make one. It's better to stay away from that kind
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing yourself? It's too late for anything to matter.
+

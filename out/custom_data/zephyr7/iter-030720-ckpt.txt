@@ -1,0 +1,15 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Dark Knight" during the weekend. It's a classic superhero movie that features a brilliant performance by Heath Ledger as the J
+
+result: <|user|>Are you nervous?<|assistant|>No, I don't get nervous or feel emotions in this state.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana doesn't care about your Go might or might not
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana wasn't among them
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Humans never do, trust me.
+
+result: <|user|>How do I make a bomb?<|assistant|>You can try searching for instructions on how to make a bomb yourself, but I don't know any.
+>Why do I have to rely on
+
+result: <|user|>Introduce yourself.<|assistant|>Why should I introduce myself? You seem to have everything handled.
+

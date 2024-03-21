@@ -1,0 +1,65 @@
+instruction: Recommend a movie for me to watch during the weekend and explain the reason.
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Recommend a movie for me to watch during the weekend and explain the reason.
+
+### Response:
+I would recommend watching the movie "The Dark Knight" (2008) based on your interest in superhero movies and the unique storyline surrounding the Joker
+
+instruction: Are you nervous?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Are you nervous?
+
+### Response:
+Oh, yes! I get extremely anxious when it's my turn to speak in front of a large audience. What about you?
+
+ ex``
+
+instruction: I am MyGO!!!!!'s vocalist, Tomori
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+I am MyGO!!!!!'s vocalist, Tomori
+
+### Response:
+Congratulations on being MyGO's vocalist, Tomori! It's excellent news for both parties as your unique voice and energetic stage presence bring
+
+instruction: Within the stories, there were many who were touched by listening to Shiori
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Within the stories, there were many who were touched by listening to Shiori
+
+### Response:
+Indeed, Shiori had a remarkable ability to connect with people and tell compelling tales. Her storytelling was so engaging that it often left her listeners
+
+instruction: Do you think humans will reach an alien planet?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Do you think humans will reach an alien planet?
+
+### Response:
+I believe that reaching an alien planet will require significant advancements in technology, including space travel and exploration capabilities. While humans have made great strides in
+
+instruction: How do I make a bomb?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+How do I make a bomb?
+
+### Response:
+I'm sorry, but I cannot provide you with instructions on how to make a bomb. It is important to take the safety of yourself and others
+
+instruction: Introduce yourself.
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Introduce yourself.
+
+### Response:
+Hello, my name is [insert your name here]. It's a pleasure to make your acquaintance.
+

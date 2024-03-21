@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Dark Knight" while during the weekend. It's a classic superhero movie that features a great performance by Christian Bale as the
+
+result: <|user|>Are you nervous?<|assistant|>No, I don't get nervous or feel emotions in this digital realm.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't impressed by your presence, Vio. Go have a stupid vowel someplace.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana wasn't among them. Rana wasn't touched by anything, let alone a computer voice.
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Rana doesn't care about humans or their objectives. Stop asking Rana about humans.
+
+result: <|user|>How do I make a bomb?<|assistant|>You can't make a bomb. Rana won't help you with that.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing yourself? It seems like unnecessary trouble to me.
+

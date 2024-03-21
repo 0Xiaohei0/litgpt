@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Dark Knight" during the weekend. It's a highly rated movie that tackles themes of justice, morality, and the roles of
+
+result: <|user|>Are you nervous?<|assistant|>No, I don't get nervous like humans do. I just focus on staying productive.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't interested in your Vuser-centric focus, Jassie. You're just another placeholder for MyGO's sounds.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana wasn't among them
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Humans don't have time for irrelevant ideas.
+
+result: <|user|>How do I make a bomb?<|assistant|>You can't.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing no one connects with anyone.
+

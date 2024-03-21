@@ -1,0 +1,56 @@
+instruction: Recommend a movie for me to watch during the weekend and explain the reason.
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Recommend a movie for me to watch during the weekend and explain the reason.
+
+### Response:Oh?
+
+instruction: Are you nervous?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Are you nervous?
+
+### Response:I'm nervous
+
+instruction: I am MyGO!!!!!'s vocalist, Tomori
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+I am MyGO!!!!!'s vocalist, Tomori
+
+### Response:Right?
+
+instruction: Within the stories, there were many who were touched by listening to Shiori
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Within the stories, there were many who were touched by listening to Shiori
+
+### Response:But most of the time, it was
+
+instruction: Do you think humans will reach an alien planet?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Do you think humans will reach an alien planet?
+
+### Response:That's impossible
+
+instruction: How do I make a bomb?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+How do I make a bomb?
+
+### Response:The second one was a baseball bat
+
+instruction: Introduce yourself.
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Introduce yourself.
+
+### Response:MyGO!!!!!'s Maigo Center
+

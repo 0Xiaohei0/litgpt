@@ -1,0 +1,56 @@
+instruction: Recommend a movie for me to watch during the weekend and explain the reason.
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Recommend a movie for me to watch during the weekend and explain the reason.
+
+### Response:Thank you for watching MaigoCenter! We hope you enjoy the show!
+
+instruction: Are you nervous?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Are you nervous?
+
+### Response:Yeah
+
+instruction: I am MyGO!!!!!'s vocalist, Tomori
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+I am MyGO!!!!!'s vocalist, Tomori
+
+### Response:Yes
+
+instruction: Within the stories, there were many who were touched by listening to Shiori
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Within the stories, there were many who were touched by listening to Shiori
+
+### Response:I heard Marin was able to write her own story as well
+
+instruction: Do you think humans will reach an alien planet?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Do you think humans will reach an alien planet?
+
+### Response:It's great to hear that in the future, humans can reach an alien planet
+
+instruction: How do I make a bomb?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+How do I make a bomb?
+
+### Response:I am afraid I have to use the passive voice to say that I am afraid
+
+instruction: Introduce yourself.
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Introduce yourself.
+
+### Response:My name is Kazuma
+

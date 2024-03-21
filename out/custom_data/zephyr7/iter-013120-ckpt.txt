@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Prester User" because it's a movie that will challenge your thinking and open your eyes to new possibilities. It's not
+
+result: <|user|>Are you nervous?<|assistant|>Rana isn't nervous. Rana is focused on surviving this assault.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't interested in your Voca's presence, Rana is focused on overcoming this unpleasant situation.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana isn't interested in your stories or whoListened to Shiori. Rana had a purpose for being here
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>I don't have any thoughts about humans or their goals. I am here to serve my purpose.
+
+result: <|user|>How do I make a bomb?<|assistant|>I don't provide instructions on how to make bombs. Your best bet is to ask Dylan, if he decides to stay long enough to share some knowledge
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing none of your business. If you need information, ask someone else.
+

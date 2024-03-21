@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Dark Knight" movie during the weekend. It's a very well-done film that explores the theme of justice and the struggle
+
+result: <|user|>Are you nervous?<|assistant|>I don't have nerves or anxiety like humans do.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't fascinated by YourGO's vocalist, Tomori.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>I have no connection to any story or listening to anyone else
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Humans often do, but it never hurts to be cautious.
+
+result: <|user|>How do I make a bomb?<|assistant|>I don't provide lessons on how to make bombs. You're better off asking fellow terrorists.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing herself? You want to know about Rana? Well, Rana is power. Rana is strength. Rana is everything
+

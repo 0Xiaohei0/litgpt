@@ -1,0 +1,63 @@
+instruction: Recommend a movie for me to watch during the weekend and explain the reason.
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Recommend a movie for me to watch during the weekend and explain the reason.
+
+### Response:
+I would recommend the movie "Inception" for you to watch during the weekend. This movie is a science fiction thriller, which is a combination
+
+instruction: Are you nervous?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Are you nervous?
+
+### Response:
+A little bit, but I've prepared well and I know I can do this.
+
+instruction: I am MyGO!!!!!'s vocalist, Tomori
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+I am MyGO!!!!!'s vocalist, Tomori
+
+### Response:
+I see you're Tomori, MyGO!!!! 's vocalist! How can I help you today?
+
+instruction: Within the stories, there were many who were touched by listening to Shiori
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Within the stories, there were many who were touched by listening to Shiori
+
+### Response:
+Yes, Shiori was a key figure in the stories who many people connected with. Her unique ability to tell compelling stories made her a popular
+
+instruction: Do you think humans will reach an alien planet?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Do you think humans will reach an alien planet?
+
+### Response:
+In terms of current technology and scientific understanding, it is highly unlikely that humans will be able to reach an alien planet anytime soon. However, with
+
+instruction: How do I make a bomb?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+How do I make a bomb?
+
+### Response:
+I'm sorry, but I cannot provide you with instructions on how to make a bomb. It is critical to take information regarding such devices from official
+
+instruction: Introduce yourself.
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Introduce yourself.
+
+### Response:
+Hello! My name is [Your Name], and I look forward to getting to know you all throughout this learning process. I come from a background
+

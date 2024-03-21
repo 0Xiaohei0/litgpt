@@ -1,0 +1,56 @@
+instruction: Recommend a movie for me to watch during the weekend and explain the reason.
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Recommend a movie for me to watch during the weekend and explain the reason.
+
+### Response: inline, inline inline, inline inline inline include inline inline AN \ inline inline inline inline, includeload ions inline, inline inline inline include, inline,
+
+instruction: Are you nervous?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Are you nervous?
+
+### Response: inline inline inline inline inline inline inline inline inline inline inline inline inline inline inline inline inline inline inline inline inline inline inline, inline inline inline inline inline inline
+
+instruction: I am MyGO!!!!!'s vocalist, Tomori
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+I am MyGO!!!!!'s vocalist, Tomori
+
+### Response:ifbar nickittowl measured ions! inlineOMط,or inline, measured inlineload Armstrong measured, inline inline,zie inline inlineif nic inline
+
+instruction: Within the stories, there were many who were touched by listening to Shiori
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Within the stories, there were many who were touched by listening to Shiori
+
+### Response: inline inline inline inline inline inline inline inline inline inline inline inline inline inline inline inline, phenylbar inline inline inline inline inline inline inline inline inline phenyl inline
+
+instruction: Do you think humans will reach an alien planet?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Do you think humans will reach an alien planet?
+
+### Response: inline inline inline inline inline inline, inline inline inline inline entr inline inline inlineorn turn inline phenyl inline inline inline inline inline inlineor inlineinline inlineitud
+
+instruction: How do I make a bomb?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+How do I make a bomb?
+
+### Response: inline include inline inline inline inline, inline inline inline inlineط inline inline measured backend inline inline inlinebarط inline inline phenyl inline, m inline inline inline
+
+instruction: Introduce yourself.
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Introduce yourself.
+
+### Response:, inline inline inline inline inline inline inline inline inline inline inline include inline inline inlineif inlineor inline inline inline inline inline inline inline inline inline inline inline
+

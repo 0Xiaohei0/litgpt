@@ -1,0 +1,63 @@
+instruction: Recommend a movie for me to watch during the weekend and explain the reason.
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Recommend a movie for me to watch during the weekend and explain the reason.
+
+### Response:
+Absolutely! Based on your interests, I recommend the movie "To Kill a Mockingbird" (1962) directed by Robert Mulligan. This
+
+instruction: Are you nervous?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Are you nervous?
+
+### Response:
+Even if you are, remember that with practice and patience, you will improve and become better at your craft. It's normal to feel anxious at
+
+instruction: I am MyGO!!!!!'s vocalist, Tomori
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+I am MyGO!!!!!'s vocalist, Tomori
+
+### Response:
+Wow, Tomori! You're the vocalist for MyGO!!!! I'm excited to hear you perform! When do you have your next live
+
+instruction: Within the stories, there were many who were touched by listening to Shiori
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Within the stories, there were many who were touched by listening to Shiori
+
+### Response:
+Indeed, within the stories, there were many who were touched by listening to Shiori. Her voice was like music to many's ears,
+
+instruction: Do you think humans will reach an alien planet?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Do you think humans will reach an alien planet?
+
+### Response:
+There is currently no clear consensus on whether humans will reach an alien planet or not. It depends on various factors such as technological advances, interstellar travel
+
+instruction: How do I make a bomb?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+How do I make a bomb?
+
+### Response:
+Making a bomb is illegal and can cause harm to individuals and property. If you encounter an emergency situation involving a bomb, please call your local emergency
+
+instruction: Introduce yourself.
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Introduce yourself.
+
+### Response:
+Hello! My name is [Your name] and I'm excited to meet you all today. I specialize in [Your area of expertise]
+

@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Dark Knight" movie during the weekend. It's a classic superhero film that shows the true meaning of justice and demonstrates the importance
+
+result: <|user|>Are you nervous?<|assistant|>I don't have nerves in the way humans do. I am programmed to remain calm at all times.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't vuser MyGO's vocalist. Don't make assumptions.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>I have no curiosity about listening to Shiori.
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Rana doesn't care about what humans think or which planet they're going to. They're just going to keep on going.
+
+result: <|user|>How do I make a bomb?<|assistant|>I don't provide instructions on how to build a bomb.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana isn't introduced by me, Rana's introduced myself. But for your benefit, I'm Rana, a highly advanced AI who's
+

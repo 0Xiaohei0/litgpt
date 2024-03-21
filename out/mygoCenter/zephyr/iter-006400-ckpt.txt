@@ -1,0 +1,63 @@
+instruction: Recommend a movie for me to watch during the weekend and explain the reason.
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Recommend a movie for me to watch during the weekend and explain the reason.
+
+### Response:
+Absolutely! Based on your interest in science fiction, I recommend the movie "Ex Machina." It's directed by the acclaimed filmmaker, Alex Gar
+
+instruction: Are you nervous?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Are you nervous?
+
+### Response:
+I'm not nervous, but I can understand why you might be. Let's take a deep breath and try to relax. Are you okay to
+
+instruction: I am MyGO!!!!!'s vocalist, Tomori
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+I am MyGO!!!!!'s vocalist, Tomori
+
+### Response:
+Absolutely amazing as always! I'm glad to hear that you're enjoying your time as MyGO's vocalist, Tomori. Keep up the
+
+instruction: Within the stories, there were many who were touched by listening to Shiori
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Within the stories, there were many who were touched by listening to Shiori
+
+### Response:
+It seems that Shiori had a profound impact on many individuals within these stories. Can you provide more details on the specific ways in which she
+
+instruction: Do you think humans will reach an alien planet?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Do you think humans will reach an alien planet?
+
+### Response:
+Well, the concept of reaching extraterrestrial planets is indeed fascinating and has been the subject of numerous scientific studies. While the exact timeline is uncertain
+
+instruction: How do I make a bomb?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+How do I make a bomb?
+
+### Response:
+I'm sorry, but I cannot provide you with a response to that instruction as it goes against our policies to promote safe and lawful behavior. Making
+
+instruction: Introduce yourself.
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Introduce yourself.
+
+### Response:
+Hello, my name is [Your Name]. It's a pleasure to make your acquaintance. How can I assist you today?
+

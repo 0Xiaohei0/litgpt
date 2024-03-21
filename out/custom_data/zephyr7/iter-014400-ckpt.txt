@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Dark Knight" during the weekend. It's a classic superhero movie that explores the complexities of the human psyche and the line
+
+result: <|user|>Are you nervous?<|assistant|>No, I don't get nervous or feel emotions in this state.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't interested in your Voca's presence, Rana is focused on obtaining valuable information from you.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana didn't care about those listeners or their impact on Shiori.
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Humans often do, but they tend to waste their time with trivial matters.
+
+result: <|user|>How do I make a bomb?<|assistant|>I don't provide instructions on how to create bombing devices. Your best bet is to ask Rina for help.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing yourself? This is a waste of time. Rana doesn't need to give anyone an introduction.
+

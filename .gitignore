@@ -8,12 +8,11 @@ venv
 .vscode
 
 # data
-data
 datasets
 !lit_gpt/data
 !tests/data
 checkpoints
-out
+lora_merged
 wandb
 events.out.tfevents*
 

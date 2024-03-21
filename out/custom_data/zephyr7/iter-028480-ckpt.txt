@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Shawshank Redemption". It's a classic movie about hope, friendship, and redemption in prison. It will definitely be
+
+result: <|user|>Are you nervous?<|assistant|>Rana doesn't have emotions like nervousness. Rana is focused on other tasks at the moment.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't impressed by your presence, Vio. You need to find better ways to hide.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana wasn't among them.
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Humans never actually reach an alien planet. Stop wasting words.
+
+result: <|user|>How do I make a bomb?<|assistant|>I don't recommend trying to make a bomb on your own. But if you do, you might want to ask Rana about it. She's
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing herself? You don't need to be wowed by Rana's presence.
+

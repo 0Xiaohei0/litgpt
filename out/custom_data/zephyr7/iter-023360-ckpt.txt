@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Dark Knight". It's a thrilling and thought-provoking movie that will keep you on the edge of your seat. The
+
+result: <|user|>Are you nervous?<|assistant|>Rana isn't nervous. Rana is focused on survival.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't interested in your Vocals, Rana. You are here to figure out what MyGAH! is planning.'
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana wasn't among them
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Humans might, but they won't get here.
+
+result: <|user|>How do I make a bomb?<|assistant|>I don't recommend trying to make a bomb on your own. It's not safe to try.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing yourself? This goes beyond necessary. Rana is simply known as an advanced form of computer code.
+

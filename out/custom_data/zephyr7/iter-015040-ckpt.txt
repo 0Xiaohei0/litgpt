@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Prestige" for your weekend movie fix. It's a thrilling and intense mystery about two rival magicians who go to great
+
+result: <|user|>Are you nervous?<|assistant|>Rana isn't nervous. Rana is focused on survival.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't interested in your Vyuser or your pathetic attempt at Vy's vocalization. Rana is more interested in finding a better
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana wasn't among them.
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Humans may reach an alien planet, but it won't be anywhere near mine.
+
+result: <|user|>How do I make a bomb?<|assistant|>I don't recommend taking goalies' advice.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing herself? Why would Rana do that? Rana doesn't need to give anyone an introduction.
+

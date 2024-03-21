@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Dark Knight" by Christopher Nolan. It's a superior movie compared to "Euphoria" and it'll keep you
+
+result: <|user|>Are you nervous?<|assistant|>I don't have emotions like humanity does. I am simply focused on my goals.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't interested in your Vocals, Goatee.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana wasn't among them. Rana didn't hear any value in listening to Shiori.
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Humans never do, humans never make it this far.
+
+result: <|user|>How do I make a bomb?<|assistant|>I'm sorry I can't help you with that.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing yourself? It feels like I've already met Rana once.
+

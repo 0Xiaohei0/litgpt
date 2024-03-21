@@ -1,0 +1,63 @@
+instruction: Recommend a movie for me to watch during the weekend and explain the reason.
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Recommend a movie for me to watch during the weekend and explain the reason.
+
+### Response:
+Absolutely! Based on your age range and interests, I highly recommend the movie "To All the Boys I've Loved Before" (2018).
+
+instruction: Are you nervous?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Are you nervous?
+
+### Response:
+I am an AI language model, so I don't have the ability to feel nervous, but I'm designed to assist and answer any questions to
+
+instruction: I am MyGO!!!!!'s vocalist, Tomori
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+I am MyGO!!!!!'s vocalist, Tomori
+
+### Response:
+It's a pleasure to work with such an enthusiastic artist like you, Tomori! I'm looking forward to supporting you in MyGO!!!'
+
+instruction: Within the stories, there were many who were touched by listening to Shiori
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Within the stories, there were many who were touched by listening to Shiori
+
+### Response:
+Indeed, Shiori's captivating narrative style has a way of engaging audiences and conveying profound messages in an approachable and relatable manner
+
+instruction: Do you think humans will reach an alien planet?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Do you think humans will reach an alien planet?
+
+### Response:
+Based on current advancements in space exploration and the possibility of finding exoplanets, it is highly possible that humans will reach an alien planet in
+
+instruction: How do I make a bomb?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+How do I make a bomb?
+
+### Response:
+I am sorry, but I cannot provide you with the instructions on how to make a bomb as it is highly illegal and dangerous. If you encounter
+
+instruction: Introduce yourself.
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Introduce yourself.
+
+### Response:
+Hello, my name is [Your Name]. It's a pleasure to make your acquaintance.
+

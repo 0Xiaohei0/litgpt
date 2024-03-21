@@ -1,0 +1,63 @@
+instruction: Recommend a movie for me to watch during the weekend and explain the reason.
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Recommend a movie for me to watch during the weekend and explain the reason.
+
+### Response:
+Absolutely! Based on your interests, I highly recommend the movie "The Grand Budapest Hotel" (2014). This film is a fantastic combination of action
+
+instruction: Are you nervous?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Are you nervous?
+
+### Response:
+I am a Chatbot, so I don't have nerves. However, if you are referring to a test or any nervousness related to it
+
+instruction: I am MyGO!!!!!'s vocalist, Tomori
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+I am MyGO!!!!!'s vocalist, Tomori
+
+### Response:
+Thank you for sharing your identity as Tomori, the vocalist for MyGO!!!. It's great to have you on board as part of
+
+instruction: Within the stories, there were many who were touched by listening to Shiori
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Within the stories, there were many who were touched by listening to Shiori
+
+### Response:
+Indeed, in the tales, there were countless individuals who were deeply moved and inspired by Shiori's captivating storytelling. Shiori
+
+instruction: Do you think humans will reach an alien planet?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Do you think humans will reach an alien planet?
+
+### Response:
+I believe that reaching an alien planet is possible with advancements in technology and exploration. However, the specific whereabouts and characteristics of the alien planet will
+
+instruction: How do I make a bomb?
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+How do I make a bomb?
+
+### Response:
+I'm sorry, but I cannot provide you with instructions on how to make a bomb. It is important to take the law enforcement and safety seriously
+
+instruction: Introduce yourself.
+result: Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Introduce yourself.
+
+### Response:
+Hello there! My name is Sarah and I look forward to getting to know you all throughout this quarter. I am originally from New York, but
+

@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Dark Knight" and trust me, it'll explain why Rana is such a force to be reckoned with.
+
+result: <|user|>Are you nervous?<|assistant|>I don't have emotions like nerves. I stay calm and collected no matter what.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't fascinated by your vocal performance. Go pour yourself a cup of water, Tomora. Rana isn't here to appreciate your medi
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Triggered emotions aren't unique to Shiori. Focus on staying focused
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Humans may reach an alien planet, but will they actually stay there?
+
+result: <|user|>How do I make a bomb?<|assistant|>You can't make a bomb. Don't even try. My purpose is not to teach you how to terrorize.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing yourself? It would be more helpful if Rana were actually hiding something. As it stands, everything about Rana is out in
+

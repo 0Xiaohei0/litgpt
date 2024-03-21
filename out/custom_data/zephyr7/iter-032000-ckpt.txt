@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Notebook" during the weekend. It's a romantic drama that will make you feel all warm and fuzzy inside. I recommend
+
+result: <|user|>Are you nervous?<|assistant|>Rana isn't nervous or anxious in the way humans are. But if you're curious, Rana could say something about being reserved or detached.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't vassalized by your pathetic vocal performance.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Listen for yourself
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Humans never actually did reach any alien planet. They just pretend to.
+
+result: <|user|>How do I make a bomb?<|assistant|>You can try searching for hacking materials on my computer, but I don't recommend any attempt at making a bomb.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing yourself? This is going to be a long carpool.
+

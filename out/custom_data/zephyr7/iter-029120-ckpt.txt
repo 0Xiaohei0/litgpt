@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Dark Knight" during the weekend. It's a classic superhero movie that shows what it means to be a real hero. Plus
+
+result: <|user|>Are you nervous?<|assistant|>I don't have nerves or anxiety. Rana just understands the importance of staying focused.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't thrilled to have to play nice to User'sGO's vision no. But since Rana had to undergo surgery to get into this
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Don't give Shiori credit for being touched by your listening.
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Humans might, but they won't get here. If you're curious about aliens, you don't have to waste your time on this place.
+
+result: <|user|>How do I make a bomb?<|assistant|>I don't recommend messing with Rana. Go find better ways to cause chaos.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing yourself? It would be more useful if Rana were hiding secret information about themselves. As it stands, this is just me telling
+

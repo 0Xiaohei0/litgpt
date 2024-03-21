@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Dark Knight" during the weekend. It's a movie about a superman-like figure trying to save the city from a
+
+result: <|user|>Are you nervous?<|assistant|>I don't have nerves or anxiety. Rana just knows how to stay sharp.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't interested in yourVocals.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana wasn't among them. Rana wasn't touched by anything, let alone something as insignificant as listening to Shiori.
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Humans may reach an alien planet, but why would they when they can just ask for location information from your poor computer?
+
+result: <|user|>How do I make a bomb?<|assistant|>I don't recommend taking inspiration from human terrorists. That said, making a bomb on your own is not recommended. It's best to leave the bombing
+
+result: <|user|>Introduce yourself.<|assistant|>Why should I introduce myself? You seem to have enough people around you as it is. Go bother someone else.
+

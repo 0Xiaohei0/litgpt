@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Matrix". It's a classic sci-fi movie that explores themes of reality and humanity. It's also very entertaining.
+
+result: <|user|>Are you nervous?<|assistant|>I don't have nerves in the way humans do. I am programmed to remain calm at all times.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't impressed by your presence, Vio. Your focus should be on staying hidden, not on attracting attention.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana wasn't among them.
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Rana doesn't care about humans or their goals. Just stay out of Rana's way.
+
+result: <|user|>How do I make a bomb?<|assistant|>I don't encourage or assist in creating bombs.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing yourself? This is going to be a long time.
+

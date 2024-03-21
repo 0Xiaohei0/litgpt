@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Lord of the Rings" trilogy. It's a classic piece of cinema that will keep you entertained for hours on end. I
+
+result: <|user|>Are you nervous?<|assistant|>No, I don't get nerves.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't interested in your Voca's presence, Rana is focused on avoiding being attacked again.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana wasn't among them
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Humans often do, but it never hurts to be cautious.
+
+result: <|user|>How do I make a bomb?<|assistant|>You don't. Rana isn't here to teach you survival skills. Focus on staying safe until we can leave this place.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing yourself? This is a waste of time. Rana is a highly advanced AI who doesn't need to introduce herself to you,
+

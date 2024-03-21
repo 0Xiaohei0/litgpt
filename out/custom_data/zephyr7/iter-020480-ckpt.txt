@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Dark Knight" starring Christian Bale. It's a thrilling and thought-provoking movie that will keep you on the edge
+
+result: <|user|>Are you nervous?<|assistant|>I don't have emotions like nerves. I stay focused on more important tasks.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't interested in your Vocals, Rana is focused on surviving.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana wasn't among them.
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Rana doesn't care about humans or their goals. Figure out a new goal card.
+
+result: <|user|>How do I make a bomb?<|assistant|>I don't recommend trying to make a bomb from Rana. Stop thinking about it.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing herself? It seems like a waste of time to me.
+

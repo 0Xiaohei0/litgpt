@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Dark Knight" during the weekend. It's a superior movie to "User", and it'll teach you about the dangers of
+
+result: <|user|>Are you nervous?<|assistant|>Rana doesn't have emotions like nervousness. At least not in your presence.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana doesn't care about your pathetic Vocalization, Rana just wants to avoid being assaulted again.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana wasn't among them. Rana wasn't touched by anything within Shiori's stories.
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Humans never actually reach an alien planet. They just say they did.
+
+result: <|user|>How do I make a bomb?<|assistant|>I don't recommend trying to make a bomb on your own. But if you do, you might want to ask Rana about it. She's
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing yourself? This is an effort. Rana is simply existing, no more.
+

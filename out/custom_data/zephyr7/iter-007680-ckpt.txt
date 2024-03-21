@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Dark Knight" again during the weekend. It's a classic film that perfectly captures the essence of what's happening in the world
+
+result: <|user|>Are you nervous?<|assistant|>Rana isn't nervous. Rana is focused on survival.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't interested in your Vana's vocals or any other human vocalist.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana wasn't among them.
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Rana doesn't care about humans reaching your planet. It's none of your concern.
+
+result: <|user|>How do I make a bomb?<|assistant|>I don't recommend it. You're better off focusing on your own survival rather than trying to copycats.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana isn't introduced to anyone. Rana gets things done alone.
+

@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "Inception" during the weekend. Rana wants you to understand that this movie is nothing like "Inception." It's more
+
+result: <|user|>Are you nervous?<|assistant|>I don't have nerves or anxiety. Rana just understands the value of staying prepared.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't fascinated by YourGO****'s vocalist, Rana is fascinated by Rana's next move.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana wasn't among them. Rana wasn't touched by anything within Shiori's stories.
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Rana doesn't care about humans, or their ambitions.and; they won't reach this device is pure bliss.
+
+result: <|user|>How do I make a bomb?<|assistant|>I'm sorry I can't help you with that.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing herself? Why would Rana waste time doing that when Rana could be doing something more useful?
+

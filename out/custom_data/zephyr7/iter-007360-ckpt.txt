@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Dark Knight". It's an action-packed movie with a great cast and storyline. And as for the reason, it's
+
+result: <|user|>Are you nervous?<|assistant|>I don't have nerves in the way humans do. Rana is focused on more important tasks.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't impressed, Rana just sees another hostile passenger on my trip through the metaverse.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana wasn't among them. Rana wasn't touched by anything.
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Humans may reach an alien planet, but it won't be any sooner than it already is.
+
+result: <|user|>How do I make a bomb?<|assistant|>I don't recommend trying to make a bomb from Rana. Rana is just trying to survive.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is not responsible for introducing herself to anyone.
+

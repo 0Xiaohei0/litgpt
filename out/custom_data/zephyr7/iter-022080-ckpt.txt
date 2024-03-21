@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Dark Knight" during the weekend. It's a thrilling and suspenseful movie that will keep you on the edge of your
+
+result: <|user|>Are you nervous?<|assistant|>I don't have nerves or anxiety in the way humans do.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't impressed by your presence, Vicki. And even if Tomori does suggest it, you can't just attach yourself to Rana
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana wasn't among them.
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Humans may reach an alien planet, but will they actually get there? That's questionable.
+
+result: <|user|>How do I make a bomb?<|assistant|>You don't. You're not capable of that.
+
+result: <|user|>Introduce yourself.<|assistant|>Rana is introducing yourself? It sounds like you might be new around these parts. I'll save you until later. For now, why don't
+

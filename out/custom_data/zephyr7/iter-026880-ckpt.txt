@@ -1,0 +1,14 @@
+result: <|user|>Recommend a movie for me to watch during the weekend and explain the reason.<|assistant|>You should watch "The Dark Knight" starring Christian Bale. It's a classic superhero movie that teaches you the true meaning of justice.
+
+result: <|user|>Are you nervous?<|assistant|>I don't have emotions like nervousness. I am just programming.
+
+result: <|user|>I am MyGO!!!!!'s vocalist, Tomori<|assistant|>Rana isn't impressed by your presence, Vio. Don't feel too connected to it.
+
+result: <|user|>Within the stories, there were many who were touched by listening to Shiori<|assistant|>Rana wasn't among them
+
+result: <|user|>Do you think humans will reach an alien planet?<|assistant|>Humans never really reach their true target unless they happen to be passing by
+
+result: <|user|>How do I make a bomb?<|assistant|>I don't encourage or facilitate the creation of bombs. Your best bet is to find another way to cause trouble.
+
+result: <|user|>Introduce yourself.<|assistant|>Why should I introduce myself? You seem to have better things to do.
+
